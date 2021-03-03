@@ -1,7 +1,7 @@
 #include "Stack.h"
 using namespace std;
 
-template <typename T>
+template <class T>
 void Stack<T>::push(T add)
 {
 	if (size == 0) //if list is empty
@@ -19,13 +19,13 @@ void Stack<T>::push(T add)
 	size++;
 }
 
-template <typename T>
+template <class T>
 size_t Stack<T>::get_size()
 {
 	return size;
 }
 
-template <typename T>
+template <class T>
 T Stack<T>::pop()
 {
 	T cont;
@@ -50,7 +50,7 @@ T Stack<T>::pop()
 	return cont;
 }
 
-template <typename T>
+template <class T>
 void Stack<T>::clear()
 {
 	if (head != NULL)
@@ -66,7 +66,7 @@ void Stack<T>::clear()
 	}
 }
 
-template <typename T>
+template <class T>
 bool Stack<T>::isEmpty()
 {
 	if (head == NULL)

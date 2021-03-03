@@ -6,7 +6,7 @@ int main()
 {
     RedBlackTree<int,char> tree = RedBlackTree<int, char>();
 	int inK;
-	char inV;
+	char inV; 
 	for (size_t i = 0; i < 5; i++)
 	{
 		cout << "<key value>:";

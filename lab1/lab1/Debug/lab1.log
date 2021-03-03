@@ -1,4 +1,6 @@
-﻿  lab1.cpp
+﻿  RedBlackTree.cpp
+  lab1.cpp
+  Создание кода...
 lab1.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: void __thiscall RedBlackTree<int,char>::insert(int,char)" (?insert@?$RedBlackTree@HD@@QAEXHD@Z) в функции _main
 lab1.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: void __thiscall RedBlackTree<int,char>::print(void)" (?print@?$RedBlackTree@HD@@QAEXXZ) в функции _main
 C:\Users\Ксения\Documents\универ дз\4 сем\AiSD\AiSD_1lab_4sem\lab1\Debug\lab1.exe : fatal error LNK1120: неразрешенных внешних элементов: 2

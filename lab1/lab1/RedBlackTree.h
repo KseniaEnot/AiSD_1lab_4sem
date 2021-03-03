@@ -1,21 +1,15 @@
 #pragma once
 #include "Stack.h"
+#include <iostream>
 
-template <class K, class V>
+template <typename K, typename V>
 class RedBlackTree
 {
 private:
 	class Node
 	{
-	private:
-		K key;
-		V value;
-		Node* left;
-		Node* right;
-		Node* parent;
-		bool color; // black = 0, red = 1
 	public:
-		Node(K key, V value,bool color = 0, Node* parent = nullptr, Node* left = nullptr, Node* right = nullptr) {
+		Node(K key, V value, bool color = 0, Node* parent = nullptr, Node* left = nullptr, Node* right = nullptr) {
 			this->key = key;
 			this->value = value;
 			this->color = color;
@@ -24,19 +18,27 @@ private:
 			this->parent = parent;
 		}
 		~Node();
+		K key;
+		V value;
+		Node* left;
+		Node* right;
+		Node* parent;
+		bool color; // black = 0, red = 1
 	};
 	class dft_Iterator // depth-first traverse
 	{
 	private:
 		Stack<Node*> stack;
 		Node* current;
+		Node* nil;
 	public:
-		dft_Iterator() {
-			stack = new Stack();
+		dft_Iterator(Node* root = nullptr,Node* nil=nullptr) {
+			//stack = new Stack<Node*>();
+			this->nil = nil;
 			current = root;
-			stack->push(current);
+			stack.push(current);
 			if (current->right != nil)
-				stack->push(current->right);
+				stack.push(current->right);
 		};
 		Node* next() {
 			if (!has_next()) {
@@ -45,7 +47,7 @@ private:
 			Node* temp = current;
 			if (current->right != nil)
 			{
-				stack->push(current->right);
+				stack.push(current->right);
 			}
 			if (current->left != nil)
 			{
@@ -53,15 +55,15 @@ private:
 			}
 			if (current == temp)
 			{
-				if (!stack->isEmpty())
+				if (!stack.isEmpty())
 				{
-					current = stack->pop();
+					current = stack.pop();
 				}
 			}
 			return temp;
 		}
 		bool has_next() {
-			if (!stack->isEmpty() || (current->left != nil) || (current->right != nil))
+			if (!stack.isEmpty() || (current->left != nil) || (current->right != nil))
 				return true;
 			else
 				return false;
@@ -69,7 +71,7 @@ private:
 		~dft_Iterator();
 	};
 	Node* root;
-	Node* nil = new Node(' ',' ',0);
+	Node* nil = new Node(' ', ' ', 0);;
 	int count;
 public:
 	void insert(K, V); // добавление элемента с ключом и значением
@@ -81,8 +83,7 @@ public:
 	void clear(); // очищение ассоциативного массива
 	K* get_keys(); // возвращает список ключей
 	V* get_values(); // возвращает список значений
-	void print(); // вывод в консоль\
-
+	void print(); // вывод в консоль
 
 	RedBlackTree(Node* root=nullptr, int count=0) {
 		this->root = root;
