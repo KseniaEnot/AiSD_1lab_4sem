@@ -40,13 +40,16 @@ public:
     bool isEmpty(); // test for emptiness
     ~Stack()
     {
-        while (head->next != NULL) //while we can go next
+        if (head != NULL)
         {
-            head = head->next;
-            delete head->before;
+            while (head->next != NULL) //while we can go next
+            {
+                head = head->next;
+                delete head->before;
+            }
+            size = 0;
+            delete head;
         }
-        size = 0;
-        delete head;
     };
 };
 

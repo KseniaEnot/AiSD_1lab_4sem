@@ -18,9 +18,6 @@
     <ClCompile Include="lab1.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="RedBlackTree.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="Stack.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>

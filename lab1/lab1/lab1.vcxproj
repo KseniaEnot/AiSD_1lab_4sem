@@ -148,7 +148,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="lab1.cpp" />
-    <ClCompile Include="RedBlackTree.cpp" />
     <ClCompile Include="Stack.cpp" />
   </ItemGroup>
   <ItemGroup>
